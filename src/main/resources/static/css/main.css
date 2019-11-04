@@ -1,0 +1,8 @@
+.dropdown-menu>a:hover {
+	background-color: #33BEFF;
+	text-decoration: none;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+	background-color: #33BEFF;
+/* 	background-color: #F3F694 */
+}
