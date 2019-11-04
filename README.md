@@ -3,6 +3,13 @@ Spring Boot JQuery AJAX Bootstrap-Modal showcase
 
 <h2> Using Spring Boot, JQuery, AJAX, Thymeleaf, BootStrap, Bootstrap-Modal, HTML, CSS, JavaScript  </h2>
 
+# How to setup:
+
+Clone the project in your favorite IDE.
+
+Run AddressBookApplication.java as Spring Boot App.
+
+
 <h2> SCREENSHOTS </h2>
 
 <h4> Contacts List </h4>
