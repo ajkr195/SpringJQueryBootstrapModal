@@ -49,14 +49,14 @@ public class AddressController {
 //	}
 	
 	@GetMapping("/delete") 
-	public String deleteAddBook (Integer id) {
+	public String deleteAddBook (Long id) {
 		addBookRepo.deleteById(id);
 		return "redirect:/";
 	}
 	
 	@GetMapping("/findOne") 
 	@ResponseBody
-	public Optional<Addressbook> findOne (Integer id) {
+	public Optional<Addressbook> findOne (Long id) {
 		return addBookRepo.findById(id);
 	}
 	

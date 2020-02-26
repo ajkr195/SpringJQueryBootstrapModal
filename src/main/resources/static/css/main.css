@@ -2,7 +2,45 @@
 	background-color: #33BEFF;
 	text-decoration: none;
 }
+
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-	background-color: #33BEFF;
-/* 	background-color: #F3F694 */
+	/* 	background-color: #33BEFF; */
+	/* 	background-color: #F3F694; */
+	font-weight: bold;
+}
+
+.table_morecondensed>thead>tr>th, .table_morecondensed>tbody>tr>th,
+	.table_morecondensed>tfoot>tr>th, .table_morecondensed>thead>tr>td,
+	.table_morecondensed>tbody>tr>td, .table_morecondensed>tfoot>tr>td {
+	padding: 1px;
+	font-size: auto;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.nav>li>a {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.btn-space {
+	margin-right: 5px;
+	margin-left: 5px;
+	font-size: 12px
+}
+
+.control-label {
+	padding-top: 6px;
+}
+
+.pull-left {
+	margin-left: -20px; /* Try with different values until you are happy */
+}
+
+.error {
+	color: red;
 }

@@ -15,6 +15,7 @@ $(document).ready(function(){
 			$('.myForm #lastname').val(addressbook.lastname);
 			$('.myForm #phonenumber').val(addressbook.phonenumber);
 			$('.myForm #email').val(addressbook.email);
+			$('.myForm #address').val(addressbook.address);
 		});
 		
 		
@@ -25,6 +26,7 @@ $(document).ready(function(){
 		$('.myForm #lastname').val('');
 		$('.myForm #phonenumber').val('');
 		$('.myForm #email').val('');
+		$('.myForm #address').val('');
 		$('.myForm #exampleModal').modal();
 	}
 	});

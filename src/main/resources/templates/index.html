@@ -3,19 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Address Book</title>
-<script type="text/javascript" src="webjars/jquery/3.4.1/jquery.min.js"></script>
-<!-- <link rel="stylesheet" -->
-<!-- 	href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> -->
-<!-- <script -->
-<!-- 	src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
-<script type="text/javascript"
-	src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
 <link rel="stylesheet"
-	href="css/main.css"/>
-<link rel="stylesheet"
-	href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
-
+	href="webjars/bootstrap/4.4.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 	<nav class="navbar bg-custom navbar-expand-sm bg-dark navbar-dark py-1">
@@ -40,112 +30,134 @@
 			</ul>
 		</div>
 	</nav>
-
-	<div class="card-header bg-info text-white py-0"
-		style="text-align: center">
-		<h4>
-			<b>My Contacts</b>
-		</h4>
-	</div>
-	<hr />
 	<div class="container">
+		<div style="text-align: center">
+			<h4>
+				<b>Manage AddressBook</b>
+			</h4>
+		</div>
 
 		<div class="col text-center">
-			<button class="btn btn-sm btn-success newAddBookBtn">Add New
-				Contact</button>
+			<button class="btn btn-sm btn-success newAddBookBtn btn-space">Add
+				New Contact</button>
 		</div>
-		<hr />
-			<div class="myForm">
-				<form th:action="@{/save}" method="post">
-					<div class="modal fade" id="exampleModal" tabindex="-1"
-						role="dialog" aria-labelledby="exampleModalLabel"
-						aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Addressbook
-										Form</h5>
-									<button type="button" class="close" data-dismiss="modal"
-										aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
+		<br>
+		<div class="myForm">
+			<form th:action="@{/save}" method="post" id="addressBookForm" name="addressBookForm">
+				<div class="modal fade" id="exampleModal" tabindex="-1"
+					role="dialog" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Addressbook
+								</h5>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="form-group" hidden="true">
+									<label for="id" class="col-form-label">ID:</label> <input
+										type="text" class="form-control btn-space" id="id" name="id" />
 								</div>
-								<div class="modal-body">
-									<div class="form-group">
-										<label for="id" class="col-form-label">ID:</label> <input
-											type="text" class="form-control" id="id" name="id" />
-									</div>
-									<div class="form-group">
-										<label for="firstname" class="col-form-label">Firstname:</label>
-										<input type="text" class="form-control" id="firstname"
-											name="firstname" />
-									</div>
-									<div class="form-group">
-										<label for="lastname" class="col-form-label">Lastname:</label>
-										<input type="text" class="form-control" id="lastname"
-											name="lastname" />
-									</div>
-									<div class="form-group">
-										<label for="phonenumber" class="col-form-label">Phonenumber:</label>
-										<input type="text" class="form-control" id="phonenumber"
-											name="phonenumber" />
-									</div>
-									<div class="form-group">
-										<label for="email" class="col-form-label">Email:</label> <input
-											type="text" class="form-control" id="email" name="email" />
+								<div class="row">
+									<label class="col-md-4 control-label boldlabel text-right"
+										for="firstname">Firstname:</label>
+									<div class="col-md-7 pull-left">
+										<input type="text" class="form-control btn-space"
+											id="firstname" name="firstname" />
 									</div>
 								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-sm btn-secondary"
-										data-dismiss="modal">Close</button>
-									<input type="submit" class="btn btn-sm btn-primary" value="Save" />
+								<div class="row">
+									<label class="col-md-4 control-label boldlabel text-right"
+										for="lastname">Lastname:</label>
+									<div class="col-md-7 pull-left">
+										<input type="text" class="form-control btn-space"
+											id="lastname" name="lastname" />
+									</div>
 								</div>
+								<div class="row">
+									<label class="col-md-4 control-label boldlabel text-right"
+										for="phonenumber">Phonenumber:</label>
+									<div class="col-md-7 pull-left">
+										<input type="text" class="form-control btn-space"
+											id="phonenumber" name="phonenumber" />
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-md-4 control-label boldlabel text-right"
+										for="email">Email:</label>
+									<div class="col-md-7 pull-left">
+										<input type="text" class="form-control btn-space" id="email"
+											name="email" />
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-md-4 control-label boldlabel text-right"
+										for="address">Address:</label>
+									<div class="col-md-7 pull-left">
+										<input type="text" class="form-control btn-space" id="address"
+											name="address" />
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-sm btn-secondary btn-space"
+									data-dismiss="modal">Close</button>
+								<input type="submit" class="btn btn-sm btn-primary btn-space"
+									value="Save" />
 							</div>
 						</div>
 					</div>
-				</form>
+				</div>
+			</form>
+		</div>
+
+		<div class="card-block">
+			<table class="table table-hover table_morecondensed" id="myTable">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Firstname</th>
+						<th>Lastname</th>
+						<th>Phonenumber</th>
+						<th>Email</th>
+						<th>Address</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="addressbook :${data.content}">
+						<td th:text="${addressbook.id}"></td>
+						<td th:text="${addressbook.firstname}"></td>
+						<td th:text="${addressbook.lastname}"></td>
+						<td th:text="${addressbook.phonenumber}"></td>
+						<td th:text="${addressbook.email}"></td>
+						<td th:text="${addressbook.address}"></td>
+						<td><a th:href="@{delete/(id=${addressbook.id})}"
+							class="btn-sm btn-danger btn-space delBtn">Delete</a><a
+							th:href="@{findOne/(id=${addressbook.id})}"
+							class="btn-sm btn-warning btn-space editBtn">Edit</a></td>
+						<!-- comment above two <TD> tags AND uncomment below if you want to use client side DATATABLES -->
+						<!-- 								<a th:href="@{delete/(id=${addressbook.id})}" -->
+						<!-- 								class="btn btn-danger delBtn">Delete</a> -->
+						<!-- 							<a th:href="@{findOne/(id=${addressbook.id})}" -->
+						<!-- 								class="btn btn-primary editBtn">Edit</a> -->
+					</tr>
+				</tbody>
+			</table>
+			<div th:if="${!data.empty}">
+				<ul class="nav nav-pills justify-content-end ml-auto">
+					<li class="nav-item"
+						th:each="i : ${#numbers.sequence(0,data.totalPages-1)}"><a
+						th:href="@{/(page=${i})}" th:text="${i+1}" class="nav-link"
+						th:classappend="${currentPage}==${i}?'active':''"> </a></li>
+				</ul>
 			</div>
 
-			<div class="card-block">
-				<table class="table table-hover"
-					id="myTable">
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>Firstname</th>
-							<th>Lastname</th>
-							<th>Phonenumber</th>
-							<th>Email</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="addressbook :${data.content}">
-							<td th:text="${addressbook.id}"></td>
-							<td th:text="${addressbook.firstname}"></td>
-							<td th:text="${addressbook.lastname}"></td>
-							<td th:text="${addressbook.phonenumber}"></td>
-							<td th:text="${addressbook.email}"></td>
-							<td><a th:href="@{delete/(id=${addressbook.id})}"
-								class="btn-sm btn-danger delBtn">Delete</a></td>
-							<td><a th:href="@{findOne/(id=${addressbook.id})}"
-								class="btn-sm btn-warning editBtn">Edit</a></td>
-							<!-- comment above two <TD> tags AND uncomment below if you want to use client side DATATABLES -->
-							<!-- 								<a th:href="@{delete/(id=${addressbook.id})}" -->
-							<!-- 								class="btn btn-danger delBtn">Delete</a> -->
-							<!-- 							<a th:href="@{findOne/(id=${addressbook.id})}" -->
-							<!-- 								class="btn btn-primary editBtn">Edit</a> -->
-						</tr>
-					</tbody>
-				</table>
-					<ul class="nav nav-pills justify-content-end ml-auto">
-						<li class="nav-item"
-							th:each="i : ${#numbers.sequence(0,data.totalPages-1)}"><a
-							th:href="@{/(page=${i})}" th:text="${i+1}" class="nav-link"
-							th:classappend="${currentPage}==${i}?'active':''"> </a></li>
-
-					</ul>
-			</div>
+		</div>
 	</div>
 
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
@@ -159,10 +171,9 @@
 					</button>
 				</div>
 				<div class="modal-body">
-<!-- 					<p class="alert alert-danger">Are you sure you want to delete -->
-<!-- 						it?</p> -->
-						<p>Are you sure you want to delete
-						it?</p>
+					<!-- 					<p class="alert alert-danger">Are you sure you want to delete -->
+					<!-- 						it?</p> -->
+					<p>Are you sure you want to delete it?</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-sm btn-secondary"
@@ -172,8 +183,55 @@
 			</div>
 		</div>
 	</div>
+<script type="text/javascript" src="webjars/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="webjars/jquery-validation/1.19.0/jquery.validate.min.js"></script>
+<script type="text/javascript"
+	src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+$(function() {
+	  $("form[name='addressBookForm']").validate({
+	    rules: {
+	      // The key name on the left side is the name attribute
+	      // of an input field. Validation rules are defined
+	      // on the right side
+	      firstname: "required",
+	      lastname: "required",
+	      email: {
+	        required: true,
+	        // Specify that email should be validated
+	        // by the built-in "email" rule
+	        email: true
+	      },
+	      address: {
+	          required: true,
+	          minlength: 1,
+	          maxlength: 40,
+	      },
+	      phonenumber: {
+	          required: true,
+	          minlength: 10,
+	          maxlength: 10,
+	          digits: true
+	      }
+	    },
+	    // Specify validation error messages
+	    messages: {
+	      firstname: "Please enter your firstname",
+	      lastname: "Please enter your lastname",
+	      email: "Please enter a valid email address",
+	      address: "Please enter a valid address"
+	    },
+	    // Make sure the form is submitted to the destination defined
+	    // in the "action" attribute of the form when valid
+	    submitHandler: function(form) {
+	      form.submit();
+	    }
+	  });
+	});
 
-
+</script>
 
 
 </body>

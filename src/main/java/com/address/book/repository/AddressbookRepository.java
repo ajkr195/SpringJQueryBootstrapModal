@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.address.book.model.Addressbook;
 
-public interface AddressbookRepository extends JpaRepository<Addressbook, Integer> {
+public interface AddressbookRepository extends JpaRepository<Addressbook, Long> {
 
 }
