@@ -20,6 +20,10 @@ Run AddressBookApplication.java as Spring Boot App.
 
 ![SpringJQueryBootstrapModal](https://github.com/ajkr195/SpringJQueryBootstrapModal/blob/master/screenshots/img2.jpg)
 
+<h4> JQuery Validation Messages </h4>
+
+![SpringJQueryBootstrapModal](https://github.com/ajkr195/SpringJQueryBootstrapModal/blob/master/screenshots/img5.jpg)
+
 <h4> Edit a Contact </h4>
 
 ![SpringJQueryBootstrapModal](https://github.com/ajkr195/SpringJQueryBootstrapModal/blob/master/screenshots/img3.jpg)
