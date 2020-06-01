@@ -43,7 +43,8 @@
 		</div>
 		<br>
 		<div class="myForm">
-			<form th:action="@{/save}" method="post" id="addressBookForm" name="addressBookForm">
+			<form th:action="@{/save}" method="post" id="addressBookForm"
+				name="addressBookForm">
 				<div class="modal fade" id="exampleModal" tabindex="-1"
 					role="dialog" aria-labelledby="exampleModalLabel"
 					aria-hidden="true">
@@ -60,29 +61,33 @@
 							<div class="modal-body">
 								<div class="form-group" hidden="true">
 									<label for="id" class="col-form-label">ID:</label> <input
-										type="text" class="form-control btn-space" id="id" name="id" />
+										type="text" class="form-control form-control-sm btn-space"
+										id="id" name="id" />
 								</div>
 								<div class="row">
 									<label class="col-md-4 control-label boldlabel text-right"
 										for="firstname">Firstname:</label>
 									<div class="col-md-7 pull-left">
-										<input type="text" class="form-control btn-space"
-											id="firstname" name="firstname" />
+										<input type="text"
+											class="form-control form-control-sm btn-space" id="firstname"
+											name="firstname" />
 									</div>
 								</div>
 								<div class="row">
 									<label class="col-md-4 control-label boldlabel text-right"
 										for="lastname">Lastname:</label>
 									<div class="col-md-7 pull-left">
-										<input type="text" class="form-control btn-space"
-											id="lastname" name="lastname" />
+										<input type="text"
+											class="form-control form-control-sm btn-space" id="lastname"
+											name="lastname" />
 									</div>
 								</div>
 								<div class="row">
 									<label class="col-md-4 control-label boldlabel text-right"
 										for="phonenumber">Phonenumber:</label>
 									<div class="col-md-7 pull-left">
-										<input type="text" class="form-control btn-space"
+										<input type="text"
+											class="form-control form-control-sm btn-space"
 											id="phonenumber" name="phonenumber" />
 									</div>
 								</div>
@@ -90,7 +95,8 @@
 									<label class="col-md-4 control-label boldlabel text-right"
 										for="email">Email:</label>
 									<div class="col-md-7 pull-left">
-										<input type="text" class="form-control btn-space" id="email"
+										<input type="text"
+											class="form-control form-control-sm btn-space" id="email"
 											name="email" />
 									</div>
 								</div>
@@ -98,7 +104,8 @@
 									<label class="col-md-4 control-label boldlabel text-right"
 										for="address">Address:</label>
 									<div class="col-md-7 pull-left">
-										<input type="text" class="form-control btn-space" id="address"
+										<input type="text"
+											class="form-control form-control-sm btn-space" id="address"
 											name="address" />
 									</div>
 								</div>
@@ -140,11 +147,6 @@
 							class="btn-sm btn-danger btn-space delBtn">Delete</a><a
 							th:href="@{findOne/(id=${addressbook.id})}"
 							class="btn-sm btn-warning btn-space editBtn">Edit</a></td>
-						<!-- comment above two <TD> tags AND uncomment below if you want to use client side DATATABLES -->
-						<!-- 								<a th:href="@{delete/(id=${addressbook.id})}" -->
-						<!-- 								class="btn btn-danger delBtn">Delete</a> -->
-						<!-- 							<a th:href="@{findOne/(id=${addressbook.id})}" -->
-						<!-- 								class="btn btn-primary editBtn">Edit</a> -->
 					</tr>
 				</tbody>
 			</table>
@@ -171,8 +173,6 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<!-- 					<p class="alert alert-danger">Are you sure you want to delete -->
-					<!-- 						it?</p> -->
 					<p>Are you sure you want to delete it?</p>
 				</div>
 				<div class="modal-footer">
@@ -183,55 +183,54 @@
 			</div>
 		</div>
 	</div>
-<script type="text/javascript" src="webjars/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript"
-	src="webjars/jquery-validation/1.19.0/jquery.validate.min.js"></script>
-<script type="text/javascript"
-	src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript">
-$(function() {
-	  $("form[name='addressBookForm']").validate({
-	    rules: {
-	      // The key name on the left side is the name attribute
-	      // of an input field. Validation rules are defined
-	      // on the right side
-	      firstname: "required",
-	      lastname: "required",
-	      email: {
-	        required: true,
-	        // Specify that email should be validated
-	        // by the built-in "email" rule
-	        email: true
-	      },
-	      address: {
-	          required: true,
-	          minlength: 1,
-	          maxlength: 40,
-	      },
-	      phonenumber: {
-	          required: true,
-	          minlength: 10,
-	          maxlength: 10,
-	          digits: true
-	      }
-	    },
-	    // Specify validation error messages
-	    messages: {
-	      firstname: "Please enter your firstname",
-	      lastname: "Please enter your lastname",
-	      email: "Please enter a valid email address",
-	      address: "Please enter a valid address"
-	    },
-	    // Make sure the form is submitted to the destination defined
-	    // in the "action" attribute of the form when valid
-	    submitHandler: function(form) {
-	      form.submit();
-	    }
-	  });
-	});
-
-</script>
+	<script type="text/javascript" src="webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="webjars/jquery-validation/1.19.0/jquery.validate.min.js"></script>
+	<script type="text/javascript"
+		src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("form[name='addressBookForm']").validate({
+				rules : {
+					// The key name on the left side is the name attribute
+					// of an input field. Validation rules are defined
+					// on the right side
+					firstname : "required",
+					lastname : "required",
+					email : {
+						required : true,
+						// Specify that email should be validated
+						// by the built-in "email" rule
+						email : true
+					},
+					address : {
+						required : true,
+						minlength : 1,
+						maxlength : 40,
+					},
+					phonenumber : {
+						required : true,
+						minlength : 10,
+						maxlength : 10,
+						digits : true
+					}
+				},
+				// Specify validation error messages
+				messages : {
+					firstname : "Please enter your firstname",
+					lastname : "Please enter your lastname",
+					email : "Please enter a valid email address",
+					address : "Please enter a valid address"
+				},
+				// Make sure the form is submitted to the destination defined
+				// in the "action" attribute of the form when valid
+				submitHandler : function(form) {
+					form.submit();
+				}
+			});
+		});
+	</script>
 
 
 </body>

@@ -39,14 +39,6 @@ public class AddressController {
 		return "redirect:/";
 	}
 	
-//	@PostMapping("/save") 
-//	public String saveAddBook (@Valid Addressbook ab, BindingResult bindingResult) {
-//		if (bindingResult.hasErrors()) {
-//            return "redirect:/";
-//        }
-//		addBookRepo.save(ab);
-//		return "redirect:/";
-//	}
 	
 	@GetMapping("/delete") 
 	public String deleteAddBook (Long id) {

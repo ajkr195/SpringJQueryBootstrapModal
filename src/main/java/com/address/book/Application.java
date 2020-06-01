@@ -21,18 +21,18 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		addBookRepo.save(new Addressbook(1l, "Fname1", "LName1", 1234512345l, "fname1.lname1@email.com",
-				"fname1 lname1 some address"));
-		addBookRepo.save(new Addressbook(2l, "Fname2", "LName2", 1234512345l, "fname2.lname2@email.com",
-				"fname2.lname1 some address"));
-		addBookRepo.save(new Addressbook(3l, "Fname3", "LName3", 1234512345l, "fname3.lname3@email.com",
-				"fname3 lname3 some address"));
-		addBookRepo.save(new Addressbook(4l, "Fname4", "LName4", 1234512345l, "fname4.lname4@email.com",
-				"fname4.lname4 some address"));
-		addBookRepo.save(new Addressbook(5l, "Fname5", "LName5", 1234512345l, "fname5.lname5@email.com",
-				"fname5.lname5 some address"));
-		addBookRepo.save(new Addressbook(6l, "Fname6", "LName6", 1234512345l, "fname6.lname6@email.com",
-				"fname6.lname6 some address"));
+		addBookRepo.save(new Addressbook(1l, "Fname1", "LName1", 1234512345l, "flname1@email.com",
+				"address1"));
+		addBookRepo.save(new Addressbook(2l, "Fname2", "LName2", 1234512345l, "flname2@email.com",
+				"address2"));
+		addBookRepo.save(new Addressbook(3l, "Fname3", "LName3", 1234512345l, "flname3@email.com",
+				"address3"));
+		addBookRepo.save(new Addressbook(4l, "Fname4", "LName4", 1234512345l, "flname4@email.com",
+				"address4"));
+		addBookRepo.save(new Addressbook(5l, "Fname5", "LName5", 1234512345l, "flname5@email.com",
+				"address5"));
+		addBookRepo.save(new Addressbook(6l, "Fname6", "LName6", 1234512345l, "flname6@email.com",
+				"address6"));
 
 	}
 
