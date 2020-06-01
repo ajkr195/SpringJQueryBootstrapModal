@@ -42,80 +42,86 @@
 				New Contact</button>
 		</div>
 		<br>
-		<div id="stylized" class="myForm">
+		<div class="myForm">
 			<form th:action="@{/save}" method="post" id="addressBookForm"
 				name="addressBookForm">
-				<div class="form-group" hidden="true">
-					<label for="id" class="col-form-label">ID:</label> <input
-						type="text" class="form-control form-control-sm btn-space" id="id"
-						name="id" />
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="jumbotron jumbo">
-							<div class="row">
-								<label class="col-md-4 control-label boldlabel text-right"
-									for="firstname">Firstname:</label>
-								<div class="col-md-7 pull-left">
-									<input type="text"
-										class="form-control form-control-sm btn-space" id="firstname"
-										name="firstname" />
+				<div class="modal fade" id="exampleModal" tabindex="-1"
+					role="dialog" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Addressbook
+								</h5>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="form-group" hidden="true">
+									<label for="id" class="col-form-label">ID:</label> <input
+										type="text" class="form-control form-control-sm btn-space"
+										id="id" name="id" />
+								</div>
+								<div class="row">
+									<label class="col-md-4 control-label boldlabel text-right"
+										for="firstname">Firstname:</label>
+									<div class="col-md-7 pull-left">
+										<input type="text"
+											class="form-control form-control-sm btn-space" id="firstname"
+											name="firstname" />
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-md-4 control-label boldlabel text-right"
+										for="lastname">Lastname:</label>
+									<div class="col-md-7 pull-left">
+										<input type="text"
+											class="form-control form-control-sm btn-space" id="lastname"
+											name="lastname" />
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-md-4 control-label boldlabel text-right"
+										for="phonenumber">Phonenumber:</label>
+									<div class="col-md-7 pull-left">
+										<input type="text"
+											class="form-control form-control-sm btn-space"
+											id="phonenumber" name="phonenumber" />
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-md-4 control-label boldlabel text-right"
+										for="email">Email:</label>
+									<div class="col-md-7 pull-left">
+										<input type="text"
+											class="form-control form-control-sm btn-space" id="email"
+											name="email" />
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-md-4 control-label boldlabel text-right"
+										for="address">Address:</label>
+									<div class="col-md-7 pull-left">
+										<input type="text"
+											class="form-control form-control-sm btn-space" id="address"
+											name="address" />
+									</div>
 								</div>
 							</div>
-							<div class="row">
-								<label class="col-md-4 control-label boldlabel text-right"
-									for="lastname">Lastname:</label>
-								<div class="col-md-7 pull-left">
-									<input type="text"
-										class="form-control form-control-sm btn-space" id="lastname"
-										name="lastname" />
-								</div>
-							</div>
-							<div class="row">
-								<label class="col-md-4 control-label boldlabel text-right"
-									for="phonenumber">Phonenumber:</label>
-								<div class="col-md-7 pull-left">
-									<input type="text"
-										class="form-control form-control-sm btn-space"
-										id="phonenumber" name="phonenumber" />
-								</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-sm btn-secondary btn-space"
+									data-dismiss="modal">Close</button>
+								<input type="submit" class="btn btn-sm btn-primary btn-space"
+									value="Save" />
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
-						<div class="jumbotron jumbo">
-							<div class="row">
-								<label class="col-md-4 control-label boldlabel text-right"
-									for="email">Email:</label>
-								<div class="col-md-7 pull-left">
-									<input type="text"
-										class="form-control form-control-sm btn-space" id="email"
-										name="email" />
-								</div>
-							</div>
-							<div class="row">
-								<label class="col-md-4 control-label boldlabel text-right"
-									for="address">Address:</label>
-								<div class="col-md-7 pull-left">
-									<input type="text"
-										class="form-control form-control-sm btn-space" id="address"
-										name="address" />
-								</div>
-							</div>
-							<div class="row mt-2">
-								<label class="col-md-4 control-label boldlabel text-right"
-									for="address"></label> <input type="submit"
-									class="btn btn-sm btn-primary btn-space" id="saveeditbutton" value="Save" />
-								<button id="resetButton" type="button"
-									class="btn btn-sm btn-secondary btn-space">Reset</button>
-							</div>
-						</div>
-					</div>
 				</div>
-
 			</form>
 		</div>
-		<br />
+
 		<div class="card-block">
 			<table class="table table-hover table_morecondensed" id="myTable">
 				<thead>
@@ -214,8 +220,7 @@
 				messages : {
 					firstname : "Please enter your firstname",
 					lastname : "Please enter your lastname",
-					phonenumber : "Please provide valid 10-digit phone number",
-					email : "Email-id is required for all future communications",
+					email : "Please enter a valid email address",
 					address : "Please enter a valid address"
 				},
 				// Make sure the form is submitted to the destination defined
@@ -226,15 +231,7 @@
 			});
 		});
 	</script>
-	<script>
-		$(document).ready(function() {
-			$("#resetButton").click(function() {
-				$("label.error").hide();
-				$(".error").removeClass("error");
-				$("#addressBookForm").trigger("reset");
-			});
-		});
-	</script>
+
 
 </body>
 </html>

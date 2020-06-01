@@ -9,6 +9,9 @@ $(document).ready(function() {
 		var href = $(this).attr('href');
 		var text = $(this).text();
 		if (text == 'Edit') {
+			$("label.error").hide();
+			$(".error").removeClass("error");
+			$("#saveeditbutton").prop("value", "Update");
 			$.get(href, function(addressbook, status) {
 				$('.myForm #id').val(addressbook.id);
 				$('.myForm #firstname').val(addressbook.firstname);
@@ -22,6 +25,7 @@ $(document).ready(function() {
 		} else {
 			$("label.error").hide();
 			$(".error").removeClass("error");
+			$("#saveeditbutton").prop("value", "Save");
 			$('.myForm #id').val('');
 			$('.myForm #firstname').val('');
 			$('.myForm #lastname').val('');
