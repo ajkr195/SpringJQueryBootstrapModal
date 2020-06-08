@@ -1,15 +1,21 @@
 package com.address.book;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 import com.address.book.model.Addressbook;
 import com.address.book.repository.AddressbookRepository;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
+	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
 	@Autowired
 	AddressbookRepository addBookRepo;
@@ -34,6 +40,20 @@ public class Application implements CommandLineRunner {
 		addBookRepo.save(new Addressbook(6l, "Fname6", "LName6", 1234512345l, "flname6@email.com",
 				"address6"));
 
+	}
+	
+	@Bean
+	public RestTemplate restTemplate(RestTemplateBuilder builder) {
+		return builder.build();
+	}
+
+	@Bean
+	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+		return args -> {
+			Addressbook contact = restTemplate.getForObject(
+					"http://localhost:8080/api/contact/1", Addressbook.class);
+			log.info(contact.toString());
+		};
 	}
 
 }
