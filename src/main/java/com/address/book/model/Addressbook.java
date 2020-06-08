@@ -26,8 +26,22 @@ public class Addressbook {
 		this.email = email;
 		this.address = address;
 	}
+	
+	
 
 	
+	public Addressbook(String firstname, String lastname, Long phonenumber, String email, String address) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.phonenumber = phonenumber;
+		this.email = email;
+		this.address = address;
+	}
+
+
+
+
 	public Addressbook() {
 		super();
 	}

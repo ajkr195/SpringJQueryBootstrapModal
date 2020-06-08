@@ -21,13 +21,13 @@ public class DemoRestTemplate {
 
 		//getAddressbookContactById(1l);
 
-		//createAddressbookContact(12l, "Test12", "Test12", 123455l, "Test12", "Test12");
+		createAddressbookContact( "Test12", "Test12", 123455l, "Test12", "Test12");
 
 		//updateAddressbookContact(1l, 12l, "Test12", "Test12", 123455l, "Test12", "Test12");
 
 		//deleteAddressbookContact(3l);
 
-		//getAddressbookContacts();
+		getAddressbookContacts();
 	}
 
 	private static void getAddressbookContacts() {
@@ -56,11 +56,11 @@ public class DemoRestTemplate {
 		System.out.println(result);
 	}
 
-	private static void createAddressbookContact(Long id, String firstname, String lastname, Long phonenumber,
+	private static void createAddressbookContact( String firstname, String lastname, Long phonenumber,
 			String email, String address) {
 		final String uri = "http://localhost:8080/api/contact";
 
-		Addressbook newAddressbookContact = new Addressbook(id, firstname, lastname, phonenumber, email, address);
+		Addressbook newAddressbookContact = new Addressbook(firstname, lastname, phonenumber, email, address);
 
 		RestTemplate restTemplate = new RestTemplate();
 		Addressbook result = restTemplate.postForObject(uri, newAddressbookContact, Addressbook.class);
